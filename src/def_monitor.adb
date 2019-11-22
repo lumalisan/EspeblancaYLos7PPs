@@ -11,11 +11,11 @@ package body def_monitor is
          servit := false;
       end menjar;
 
-      entry put_honey when (jar < MAX) is
+      entry fer_menjar when True is
       begin
-         jar := jar + 1;
-         Put_Line("jar "&jar'Img&"/"&MAX'Img);
-      end put_honey;
-   end Monitor;
+         null;
+      end fer_menjar;
+
+    end Monitor;
 
 end def_monitor;

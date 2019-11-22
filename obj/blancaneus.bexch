@@ -1,0 +1,19 @@
+[GENERATED OBJECT FILE]
+b__blancaneus.o
+[PROJECT FILES]
+/Users/lumalisan/Downloads/EspeblancaYLos7PPs/blancaneus.gpr
+20191122094532
+[BOUND OBJECT FILES]
+/Users/lumalisan/Downloads/EspeblancaYLos7PPs/obj/def_monitor.o
+/Users/lumalisan/Downloads/EspeblancaYLos7PPs/obj/blancaneus.o
+[GENERATED SOURCE FILES]
+b__blancaneus.ads
+b__blancaneus.adb
+b__blancaneus.ali
+[RESULTING OPTIONS]
+-L/Users/lumalisan/Downloads/EspeblancaYLos7PPs/obj/
+-L/Users/lumalisan/Downloads/EspeblancaYLos7PPs/obj/
+-L/users/lumalisan/opt/gnat/2018/lib/gcc/x86_64-apple-darwin16.7.0/7.3.1/adalib/
+-static
+/users/lumalisan/opt/gnat/2018/lib/gcc/x86_64-apple-darwin16.7.0/7.3.1/adalib/libgnarl.a
+/users/lumalisan/opt/gnat/2018/lib/gcc/x86_64-apple-darwin16.7.0/7.3.1/adalib/libgnat.a

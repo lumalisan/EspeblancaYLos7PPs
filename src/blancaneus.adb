@@ -21,6 +21,13 @@ procedure BlancaNeus is
       entry Start (Idx: in Integer);
    end Nan;
 
+   -- ** Variables **
+   type a_nans is array (1..MAX_NANS) of Nan;
+   type a_noms is array (1..MAX_NANS) of Ada.Strings.Unbounded.Unbounded_String;
+   noms : a_noms;
+   n : a_nans;
+   b: Blanca;
+
    -- ** Cos **
    -- Blanca Neus
    task body Blanca is
@@ -28,9 +35,10 @@ procedure BlancaNeus is
    begin
       accept Start (Idx : in Integer) do
          My_Idx := Idx;
+         Put_Line ("BON DIA som na Blancaneus");
       end Start;
 
-      Put_Line("Blancaneus se'n va a fer una passejada");
+      Put_Line("Blancaneus sen va a fer una passejada");
 
 
    end Blanca;
@@ -42,19 +50,13 @@ procedure BlancaNeus is
    begin
       accept Start (Idx : in Integer) do
          My_Idx := Idx;
+         Put_Line ("BON DIA som en " & Ada.Strings.Unbounded.To_String(noms(Idx)));
       end Start;
 
-      Put_Line (noms'Img(My_Idx) & " treballa a la mina");
+      Put_Line (Ada.Strings.Unbounded.To_String(noms(My_Idx)) & " treballa a la mina");
 
 
    end Nan;
-
-   -- Variables
-   type a_nans is array (1..MAX_NANS) of Nan;
-   type a_noms is array (1..MAX_NANS) of Ada.Strings.Unbounded.Unbounded_String;
-   noms : a_noms;
-   n : a_nans;
-   b: Blanca;
 
 begin
    noms(1) := Ada.Strings.Unbounded.To_Unbounded_String("Mudet");
@@ -65,9 +67,7 @@ begin
    noms(6) := Ada.Strings.Unbounded.To_Unbounded_String("Rondinaire");
    noms(7) := Ada.Strings.Unbounded.To_Unbounded_String("Savi");
    b.Start(0);
-   Put_Line ("BON DIA som na Blancaneus");
    for Idx in 1..MAX_NANS loop
       n(Idx).Start(Idx);
-      Put_Line ("BON DIA som en " & noms'Img(Idx));
    end loop;
 end BlancaNeus;
