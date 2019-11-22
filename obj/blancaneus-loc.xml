@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<Locations >
+  <Project>
+    <vfs_file />
+    <file_marker column=" 4" line=" 14" >
+      <vfs_project />
+      <vfs_file>/Users/lumalisan/main.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 1" line=" 1" >
+      <vfs_project>/Users/lumalisan/Documents/OneDrive - Universitat de les Illes Balears/3#194;#186;/ProgramacionConcurrente/Practica2/blancaneus.gpr</vfs_project>
+      <vfs_file>/Users/lumalisan/Documents/OneDrive - Universitat de les Illes Balears/3#194;#186;/ProgramacionConcurrente/Practica2/src/blancaneus.adb</vfs_file>
+    </file_marker>
+    <file_marker column=" 15" line=" 73" >
+      <vfs_project>/Users/lumalisan/Documents/OneDrive - Universitat de les Illes Balears/3#194;#186;/ProgramacionConcurrente/Practica2/blancaneus.gpr</vfs_project>
+      <vfs_file>/Users/lumalisan/Documents/OneDrive - Universitat de les Illes Balears/3#194;#186;/ProgramacionConcurrente/Practica2/src/blancaneus.adb</vfs_file>
+    </file_marker>
+    <file_marker current="true" column=" 17" line=" 16" >
+      <vfs_project>/Users/lumalisan/Documents/OneDrive - Universitat de les Illes Balears/3#194;#186;/ProgramacionConcurrente/Practica2/blancaneus.gpr</vfs_project>
+      <vfs_file>/Users/lumalisan/Documents/OneDrive - Universitat de les Illes Balears/3#194;#186;/ProgramacionConcurrente/Practica2/src/def_monitor.ads</vfs_file>
+    </file_marker>
+  </Project>
+</Locations>
