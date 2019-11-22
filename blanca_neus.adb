@@ -10,51 +10,44 @@ procedure Blanca_neus is
 	
 	mon : Monitor;
 
-	-- ** Especificacion **
-	-- blanca neus
+	-- ** Especificacio **
+	-- Blanca Neus
 	task type Blanca is
 		entry Start (Idx: in Integer);
 	end Blanca;
 	
-	-- nan
+	-- Nan
 	task type Nan is
 		entry Start (Idx: in Integer);
 	end Nan;
 
-	-- ** Cuerpo **
-	-- os
+	-- ** Cos **
+	-- Blanca Neus
 	task body Blanca is
 		My_Idx: Integer;
 	begin
 		accept Start (Idx : in Integer) do
 			My_Idx := Idx;
 		end Start;
-
-		for i in 1..MAX_NANS loop
-			jar.eat;
-		end loop;
 		
 		Put_Line("Blancaneus se'n va a fer una passejada");
+		
+		
 	end Blanca;
 
-	-- abelles
+	-- Nan
 	task body Nan is
 		My_Idx : Integer;
-		max : Integer := 10;
+		-- max : Integer := 10;
 	begin
 		accept Start (Idx : in Integer) do
 			My_Idx := Idx;
 		end Start;
 
-		Put_Line ("Wasp - "&My_Idx'Img);
-		for i in 1..max loop
-			jar.put_honey;
-		end loop;
-		Put_Line("Wasp - "&My_Idx'Img& " DONE!");
+		Put_Line (noms'Img(My_Idx) & " treballa a la mina");
+		
+		
 	end Nan;
-	
-	type array_nombres is array (1..MAX_NANS) of Ada.Strings.Unbounded.Unbounded_String;
-	noms : array_nombres;
 
 	-- Variables
 	type a_nans is array (1..MAX_NANS) of Nan;
@@ -75,5 +68,6 @@ begin
 	Put_Line ("BON DIA som na Blancaneus");
 	for Idx in 1..MAX_NANS loop
 		n(Idx).Start(Idx);
+		Put_Line ("BON DIA som en " & noms'Img(Idx));
 	end loop;
 end Blanca_neus;
