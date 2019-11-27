@@ -1,19 +1,23 @@
 [GENERATED OBJECT FILE]
 b__blancaneus.o
 [PROJECT FILES]
-/Users/lumalisan/Downloads/EspeblancaYLos7PPs/blancaneus.gpr
-20191122094532
+C:\Users\Lisier\Downloads\EspeblancaYLos7PPs-master\blancaneus.gpr
+20191122102552
 [BOUND OBJECT FILES]
-/Users/lumalisan/Downloads/EspeblancaYLos7PPs/obj/def_monitor.o
-/Users/lumalisan/Downloads/EspeblancaYLos7PPs/obj/blancaneus.o
+C:\Users\Lisier\Downloads\EspeblancaYLos7PPs-master\obj\def_monitor.o
+C:\Users\Lisier\Downloads\EspeblancaYLos7PPs-master\obj\blancaneus.o
 [GENERATED SOURCE FILES]
 b__blancaneus.ads
 b__blancaneus.adb
 b__blancaneus.ali
 [RESULTING OPTIONS]
--L/Users/lumalisan/Downloads/EspeblancaYLos7PPs/obj/
--L/Users/lumalisan/Downloads/EspeblancaYLos7PPs/obj/
--L/users/lumalisan/opt/gnat/2018/lib/gcc/x86_64-apple-darwin16.7.0/7.3.1/adalib/
+-LC:\Users\Lisier\Downloads\EspeblancaYLos7PPs-master\obj\
+-LC:\Users\Lisier\Downloads\EspeblancaYLos7PPs-master\obj\
+-LC:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/
 -static
-/users/lumalisan/opt/gnat/2018/lib/gcc/x86_64-apple-darwin16.7.0/7.3.1/adalib/libgnarl.a
-/users/lumalisan/opt/gnat/2018/lib/gcc/x86_64-apple-darwin16.7.0/7.3.1/adalib/libgnat.a
+-static-libgcc
+C:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnarl.a
+C:/gnat/2018/lib/gcc/x86_64-pc-mingw32/7.3.1/adalib/libgnat.a
+-Xlinker
+--stack=0x200000,0x1000
+-mthreads

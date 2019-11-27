@@ -6,9 +6,8 @@ with Ada.Strings.Unbounded;
 
 procedure BlancaNeus is
 
+   -- Constants
    MAX_NANS : constant Integer := 7;
-
-   mon : Monitor;
 
    -- ** Especificacio **
    -- Blanca Neus
@@ -27,19 +26,32 @@ procedure BlancaNeus is
    noms : a_noms;
    n : a_nans;
    b: Blanca;
+   mon : Monitor;
+   nansDormint : Integer := 0;
 
    -- ** Cos **
    -- Blanca Neus
    task body Blanca is
       My_Idx: Integer;
    begin
+      -- En la creación del proceso "Blanca" se ejecuta su start
       accept Start (Idx : in Integer) do
          My_Idx := Idx;
          Put_Line ("BON DIA som na Blancaneus");
       end Start;
 
-      Put_Line("Blancaneus sen va a fer una passejada");
+      -- Blancanieves no acaba hasta que todos los enanos esten durmiendo
+      while nansDormint < MAX_NANS loop
+         Put_Line("Blancaneus sen va a fer una passejada");
+         delay 1.0;
+         while mon.ferMenjar loop
+            Put_Line("Blancaneus cuina per un nan");
+            delay 1.0;
+            mon.menjarUnlock;
+         end loop;
+      end loop;
 
+      Put_Line("Blancaneus sen va a DORMIR " & nansDormint'Img);
 
    end Blanca;
 
@@ -47,14 +59,29 @@ procedure BlancaNeus is
    task body Nan is
       My_Idx : Integer;
       -- max : Integer := 10;
+      contMenjades : Integer := 0;
    begin
       accept Start (Idx : in Integer) do
          My_Idx := Idx;
-         Put_Line ("BON DIA som en " & Ada.Strings.Unbounded.To_String(noms(Idx)));
+         Put_Line ("BON DIA som en " & Ada.Strings.Unbounded.To_String(noms(My_Idx)));
       end Start;
 
-      Put_Line (Ada.Strings.Unbounded.To_String(noms(My_Idx)) & " treballa a la mina");
+      while contMenjades < 2 loop
+         Put_Line (Ada.Strings.Unbounded.To_String(noms(My_Idx)) & " treballa a la mina");
+         delay 1.0;
+         Put_Line (Ada.Strings.Unbounded.To_String(noms(My_Idx)) & " espera per una cadira");
+         mon.cadiraLock;
+         Put_Line (Ada.Strings.Unbounded.To_String(noms(My_Idx)) & " ja seu");
+         Put_Line (Ada.Strings.Unbounded.To_String(noms(My_Idx)) & " espera torn per menjar");
+         mon.menjarLock;
+         Put_Line ("----------------------> " & Ada.Strings.Unbounded.To_String(noms(My_Idx)) & " menja!!!");
+         mon.cadiraUnlock;
+         contMenjades := contMenjades + 1;
+      end loop;
 
+      -- Cuando el enano acaba suma uno al contador de enanos durmiendo
+      nansDormint := nansDormint + 1;
+      Put_Line (Ada.Strings.Unbounded.To_String(noms(My_Idx)) & " sen va a DORMIR " & nansDormint'Img & "/7");
 
    end Nan;
 

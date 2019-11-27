@@ -1,14 +1,15 @@
 package def_monitor is
 
    protected type Monitor is
-      entry menjar;
-      entry fer_menjar;
+      entry cadiraLock;
+      procedure cadiraUnlock;
+      entry menjarLock;
+      procedure menjarUnlock;
+      function ferMenjar return Boolean;
 
    private
-      cadires : Integer := 4;
-      menjades : Integer := 2;
-      assegut : Boolean := false;
-      servit : Boolean := false;
+      contCadires : Integer := 0;
+      potsMenjar : Boolean := False;
    end Monitor;
 
 end def_monitor;

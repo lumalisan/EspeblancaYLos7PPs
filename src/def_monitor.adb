@@ -4,17 +4,30 @@ use Ada.Text_IO;
 package body def_monitor is
 
    protected body Monitor is
-      entry menjar when (assegut = true and servit = true) is
+      entry cadiraLock when (contCadires < 4) is
       begin
-         Put_Line("--------------> {Nombre Enano} Menjant!!!");
-         assegut := false;
-         servit := false;
-      end menjar;
+         contCadires := contCadires + 1;
+      end cadiraLock;
 
-      entry fer_menjar when True is
+      procedure cadiraUnlock is
       begin
-         null;
-      end fer_menjar;
+         contCadires := contCadires - 1;
+      end cadiraUnlock;
+
+      entry menjarLock when (potsMenjar = False) is
+      begin
+         potsMenjar := True;
+      end menjarLock;
+
+      procedure menjarUnlock is
+      begin
+         potsMenjar := False;
+      end menjarUnlock;
+
+      function ferMenjar return Boolean is
+      begin
+         return contCadires > 0;
+      end ferMenjar;
 
     end Monitor;
 
